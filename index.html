@@ -188,8 +188,8 @@
       #hero {
         min-height: 100vh;
         display: grid;
-        grid-template-columns: 0.75fr 1.25fr;
-        gap: 2.5rem;
+        grid-template-columns: 1.15fr auto 1fr;
+        gap: 2rem;
         align-items: center;
         padding: 0 3rem;
         max-width: 1200px;
@@ -199,14 +199,6 @@
 
       .hero-content {
         max-width: 480px;
-      }
-
-      .hero-visual {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-        position: relative;
-        min-width: 0;
       }
 
       .hero-name-block {
@@ -244,12 +236,12 @@
       .hero-side-title {
         font-family: 'Syne', sans-serif;
         font-weight: 800;
-        font-size: clamp(38px, 4.2vw, 64px);
+        font-size: clamp(34px, 3.6vw, 56px);
         line-height: 0.92;
-        letter-spacing: -3px;
+        letter-spacing: -2.5px;
         color: var(--text);
         margin-bottom: 1.5rem;
-        max-width: 520px;
+        max-width: 440px;
       }
 
       .hero-side-title .accent-word {
@@ -794,16 +786,14 @@
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { gap: 1.2rem; }
+
       #hero {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 2rem;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-      }
-
-      .hero-visual {
-        flex-direction: column;
-        align-items: flex-start;
+        padding-top: 7rem;
+        padding-bottom: 5rem;
       }
 
       .hero-side-title {
@@ -814,8 +804,16 @@
         width: 240px;
         height: 320px;
       }
-      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
-      .hero-scroll { left: 1.5rem; }
+
+      footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+
+      .hero-scroll {
+        left: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -848,6 +846,28 @@
 
     <!-- HERO -->
     <section id="hero">
+      <!-- LEFT BIG TEXT -->
+      <div class="hero-name-block">
+        <h1 class="hero-side-title">
+          <span class="accent-word">Available</span><br />
+          for<br />
+          opportunities.
+        </h1>
+        <p class="hero-side-name">Theethawat Pa-on</p>
+        <p class="hero-side-role">Computer Engineer · Computer Vision / AI</p>
+      </div>
+
+      <!-- CENTER PHOTO -->
+      <div class="hero-photo-wrap">
+        <img
+          src="component/old_image.jpg"
+          alt="Theethawat Pa-on"
+          class="hero-photo"
+        />
+        <div class="hero-photo-fade"></div>
+      </div>
+
+      <!-- RIGHT DESCRIPTION -->
       <div class="hero-content">
         <div class="hero-mini-badge">
           <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -868,28 +888,6 @@
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">View Projects →</a>
           <a href="#contact" class="btn btn-ghost">Get in Touch</a>
-        </div>
-      </div>
-
-      <!-- PHOTO + RIGHT TEXT -->
-      <div class="hero-visual">
-        <div class="hero-photo-wrap">
-          <img
-            src="component/old_image.jpg"
-            alt="Theethawat Pa-on"
-            class="hero-photo"
-          />
-          <div class="hero-photo-fade"></div>
-        </div>
-
-        <div class="hero-name-block">
-          <h1 class="hero-side-title">
-            <span class="accent-word">Available</span><br />
-            for<br />
-            opportunities.
-          </h1>
-          <p class="hero-side-name">Theethawat Pa-on</p>
-          <p class="hero-side-role">Computer Engineer · Computer Vision / AI</p>
         </div>
       </div>
 
