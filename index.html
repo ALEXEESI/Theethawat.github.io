@@ -185,18 +185,86 @@
     main { position: relative; z-index: 1; }
 
     /* HERO */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 0 3rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-    }
+      #hero {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        align-items: center;
+        gap: 4rem;
+        padding: 0 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+      }
 
-    #hero { gap: 4rem; }
-    .hero-content { max-width: 560px; }
+      .hero-content {
+        max-width: 480px;
+      }
+
+      .hero-visual {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        position: relative;
+      }
+
+      .hero-photo-wrap {
+        flex-shrink: 0;
+        position: relative;
+      }
+
+      .hero-photo {
+        width: 280px;
+        height: 360px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid rgba(200,240,96,0.2);
+        filter: grayscale(20%);
+        display: block;
+      }
+
+      .hero-photo-fade {
+        position: absolute;
+        bottom: -1px;
+        left: -1px;
+        right: -1px;
+        height: 120px;
+        background: linear-gradient(to top, #0a0a0a, transparent);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .hero-name-block {
+        max-width: 420px;
+      }
+
+      .hero-side-title {
+        font-family: 'Syne', sans-serif;
+        font-weight: 800;
+        font-size: clamp(42px, 4.5vw, 72px);
+        line-height: 0.92;
+        letter-spacing: -3px;
+        color: var(--text);
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-side-title::first-line {
+        color: var(--accent);
+      }
+
+      .hero-side-name {
+        font-family: 'Syne', sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: var(--text);
+        margin-bottom: 0.5rem;
+      }
+
+      .hero-side-role {
+        font-size: 14px;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
 
     .hero-eyebrow {
       font-family: 'Syne Mono', monospace;
@@ -218,30 +286,6 @@
       height: 1px;
       background: var(--accent);
     }
-
-    .hero-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: clamp(52px, 8vw, 110px);
-      line-height: 0.92;
-      letter-spacing: -4px;
-      margin-bottom: 2rem;
-    }
-
-    .hero-title .line {
-      display: block;
-      overflow: hidden;
-    }
-    .hero-title .line span {
-      display: inline-block;
-      transform: translateY(110%);
-      opacity: 0;
-    }
-    .hero-title .line:nth-child(1) span { animation: slideUp 0.8s cubic-bezier(0.16,1,0.3,1) 2.1s forwards; }
-    .hero-title .line:nth-child(2) span { animation: slideUp 0.8s cubic-bezier(0.16,1,0.3,1) 2.2s forwards; }
-    .hero-title .line:nth-child(3) span { animation: slideUp 0.8s cubic-bezier(0.16,1,0.3,1) 2.3s forwards; }
-
-    .hero-title .accent-word { color: var(--accent); }
 
     .hero-desc {
       font-size: 16px;
@@ -746,10 +790,31 @@
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { gap: 1.2rem; }
-      #hero, .section { padding-left: 1.5rem; padding-right: 1.5rem; }
-      .hero-badge { display: none; }
-      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .project-item { grid-template-columns: 1fr; }
+      #hero {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .hero-visual {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-side-title {
+        font-size: 42px;
+      }
+
+      .hero-photo {
+        width: 240px;
+        height: 320px;
+      }
+
+      .hero-badge {
+        display: none;
+      
+    }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
       .hero-scroll { left: 1.5rem; }
     }
@@ -783,46 +848,42 @@
   <main>
 
     <!-- HERO -->
-  <section id="hero">
-    <div class="hero-content">
+    <section id="hero">
+      <div class="hero-content">
         <div class="hero-eyebrow">Available for opportunities</div>
-        <h1 class="hero-title">
-          <span class="line"><span>Theethawat</span></span>
-          <span class="line"><span>Pa-on —</span></span>
-          <span class="line"><span class="accent-word">Engineer.</span></span>
-        </h1>
+
         <p class="hero-desc">
           Computer Engineering graduate from Kasetsart University.
           Specialising in Computer Vision, AI systems, and building
           technology that actually matters.
         </p>
+
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">View Projects →</a>
           <a href="#contact" class="btn btn-ghost">Get in Touch</a>
         </div>
       </div>
 
-      <!-- YOUR PHOTO HERE -->
-      <div style="flex-shrink:0; position:relative;">
-        <img
-          src="component/old_image.jpg"
-          alt="Theethawat Pa-on"
-          style="
-            width: 280px;
-            height: 360px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid rgba(200,240,96,0.2);
-            filter: grayscale(20%);
-          "
-        />
-        <div style="
-          position: absolute;
-          bottom: -1px; left: -1px; right: -1px;
-          height: 120px;
-          background: linear-gradient(to top, #0a0a0a, transparent);
-          border-radius: 0 0 8px 8px;
-        "></div>
+      <!-- PHOTO + RIGHT TEXT -->
+      <div class="hero-visual">
+        <div class="hero-photo-wrap">
+          <img
+            src="component/old_image.jpg"
+            alt="Theethawat Pa-on"
+            class="hero-photo"
+          />
+          <div class="hero-photo-fade"></div>
+        </div>
+
+        <div class="hero-name-block">
+          <h1 class="hero-side-title">
+            Available<br />
+            for<br />
+            opportunities.
+          </h1>
+          <p class="hero-side-name">Theethawat Pa-on</p>
+          <p class="hero-side-role">Computer Engineer · Computer Vision / AI</p>
+        </div>
       </div>
 
       <!-- ROTATING BADGE -->
