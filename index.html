@@ -188,9 +188,9 @@
       #hero {
         min-height: 100vh;
         display: grid;
-        grid-template-columns: 0.85fr 1.15fr;
+        grid-template-columns: 0.75fr 1.25fr;
+        gap: 2.5rem;
         align-items: center;
-        gap: 4rem;
         padding: 0 3rem;
         max-width: 1200px;
         margin: 0 auto;
@@ -204,8 +204,15 @@
       .hero-visual {
         display: flex;
         align-items: center;
-        gap: 2rem;
+        gap: 1.5rem;
         position: relative;
+        min-width: 0;
+      }
+
+      .hero-name-block {
+        max-width: 520px;
+        min-width: 0;
+        overflow: hidden;
       }
 
       .hero-photo-wrap {
@@ -240,11 +247,16 @@
       .hero-side-title {
         font-family: 'Syne', sans-serif;
         font-weight: 800;
-        font-size: clamp(42px, 4.5vw, 72px);
+        font-size: clamp(38px, 4.2vw, 64px);
         line-height: 0.92;
         letter-spacing: -3px;
         color: var(--text);
         margin-bottom: 1.5rem;
+        max-width: 520px;
+      }
+
+      .hero-side-title .accent-word {
+        color: var(--accent);
       }
 
       .hero-side-title::first-line {
@@ -340,20 +352,24 @@
     }
 
     /* FLOATING BADGE */
-    .hero-badge {
-      position: absolute;
-      right: 3rem;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 140px;
-      height: 140px;
+    .hero-mini-badge {
+      width: 95px;
+      height: 95px;
+      margin-bottom: 2rem;
       opacity: 0;
-      animation: fadeIn 1s ease 2.8s forwards, spin 20s linear 3s infinite;
+      animation: fadeIn 1s ease 2s forwards, miniSpin 20s linear 2.2s infinite;
     }
-    .hero-badge svg { width: 100%; height: 100%; }
-    @keyframes spin { to { transform: translateY(-50%) rotate(360deg); } }
-    @keyframes fadeIn { to { opacity: 1; } }
-    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    .hero-mini-badge svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    @keyframes miniSpin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
     .hero-scroll {
       position: absolute;
@@ -850,7 +866,15 @@
     <!-- HERO -->
     <section id="hero">
       <div class="hero-content">
-        <div class="hero-eyebrow">Available for opportunities</div>
+        <div class="hero-mini-badge">
+          <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="circle-text-mini" d="M 70,70 m -55,0 a 55,55 0 1,1 110,0 a 55,55 0 1,1 -110,0" fill="none"/>
+            <text font-family="Syne Mono, monospace" font-size="11.5" fill="#c8f060" letter-spacing="3.5">
+              <textPath href="#circle-text-mini">COMPUTER ENGINEER · KU 2026 · THAILAND ·</textPath>
+            </text>
+            <text x="70" y="76" text-anchor="middle" font-family="Syne, sans-serif" font-size="22" font-weight="800" fill="#c8f060">TP</text>
+          </svg>
+        </div>
 
         <p class="hero-desc">
           Computer Engineering graduate from Kasetsart University.
@@ -877,24 +901,13 @@
 
         <div class="hero-name-block">
           <h1 class="hero-side-title">
-            Available<br />
+            <span class="accent-word">Available</span><br />
             for<br />
             opportunities.
           </h1>
           <p class="hero-side-name">Theethawat Pa-on</p>
           <p class="hero-side-role">Computer Engineer · Computer Vision / AI</p>
         </div>
-      </div>
-
-      <!-- ROTATING BADGE -->
-      <div class="hero-badge">
-        <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path id="circle-text" d="M 70,70 m -55,0 a 55,55 0 1,1 110,0 a 55,55 0 1,1 -110,0" fill="none"/>
-          <text font-family="Syne Mono, monospace" font-size="11.5" fill="#c8f060" letter-spacing="3.5">
-            <textPath href="#circle-text">COMPUTER ENGINEER · KU 2026 · THAILAND ·</textPath>
-          </text>
-          <text x="70" y="76" text-anchor="middle" font-family="Syne, sans-serif" font-size="22" font-weight="800" fill="#c8f060">TP</text>
-        </svg>
       </div>
 
       <div class="hero-scroll">
