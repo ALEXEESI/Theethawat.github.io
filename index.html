@@ -836,6 +836,7 @@
     <a class="nav-logo" href="#">TP.portfolio</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#coop">Co-op</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -860,7 +861,7 @@
       <!-- CENTER PHOTO -->
       <div class="hero-photo-wrap">
         <img
-          src="component/old_image.jpg"
+          src="component/old_image.png"
           alt="Theethawat Pa-on"
           class="hero-photo"
         />
@@ -897,45 +898,75 @@
       </div>
     </section>
 
+    <!-- COOPERATIVE EDUCATION -->
+    <section class="section" id="coop">
+      <div class="section-header reveal">
+        <span class="section-num">01</span>
+        <h2 class="section-title">Cooperative Education</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+        <div class="project-item reveal">
+          <div>
+            <div class="project-num">001</div>
+            <div class="project-name">AI Tooth Segmentation &amp; Numbering</div>
+            <div class="project-location">📍 Van Lang University — Ho Chi Minh City, Vietnam</div>
+            <div class="collab-badge">⇄ International Co-op · Kasetsart University, Thailand</div>
+            <p class="project-desc">
+              Designed an instance segmentation pipeline for dental X-ray analysis.
+              Benchmarked one-stage, two-stage, and transformer-based models (YOLO, PANet, Mask R-CNN, Mask2Former).
+              Proposed HTC (Swin Transformer + FPN) achieving F1-score 94.96 and mAvP 80.20 — best overall performance.
+              Evaluated with mAP, AP50/75 metrics after CVAT annotation on 1,247 panoramic radiographs.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Swin Transformer</span><span class="tag">FPN</span><span class="tag">HTC</span>
+              <span class="tag">CVAT</span><span class="tag">mAP</span><span class="tag">Instance Segmentation</span>
+              <span class="tag">Next.js</span><span class="tag">Spring Boot</span><span class="tag">Docker</span>
+            </div>
+            <!-- PHOTO GALLERY -->
+            <div style="margin-top:1.5rem;">
+              <p style="font-family:'Syne Mono',monospace;font-size:11px;letter-spacing:0.08em;color:var(--text-dim);text-transform:uppercase;margin-bottom:0.75rem;">Project Gallery</p>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+                <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;border:1px solid var(--border);background:var(--surface2);position:relative;">
+                  <img src="component/coop1.jpg" alt="Co-op photo 1" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                  <div style="display:none;align-items:center;justify-content:center;height:100%;font-family:'Syne Mono',monospace;font-size:10px;color:var(--text-dim);flex-direction:column;gap:4px;"><span style="font-size:20px;">📷</span><span>coop1.jpg</span></div>
+                </div>
+                <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;border:1px solid var(--border);background:var(--surface2);position:relative;">
+                  <img src="component/coop2.png" alt="Co-op photo 2" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                  <div style="display:none;align-items:center;justify-content:center;height:100%;font-family:'Syne Mono',monospace;font-size:10px;color:var(--text-dim);flex-direction:column;gap:4px;"><span style="font-size:20px;">📷</span><span>coop2.jpg</span></div>
+                </div>
+                <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;border:1px solid var(--border);background:var(--surface2);position:relative;">
+                  <img src="component/coop3.png" alt="Co-op photo 3" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                  <div style="display:none;align-items:center;justify-content:center;height:100%;font-family:'Syne Mono',monospace;font-size:10px;color:var(--text-dim);flex-direction:column;gap:4px;"><span style="font-size:20px;">📷</span><span>coop3.jpg</span></div>
+                </div>
+              </div>
+            </div>
+            <!-- RESEARCH DOWNLOAD -->
+            <div style="margin-top:1.25rem;">
+              <a href="AI_Seg&numbering_on_2d_pano.pdf" target="_blank"
+                style="display:inline-flex;align-items:center;gap:8px;font-family:'Syne Mono',monospace;font-size:11px;letter-spacing:0.05em;color:var(--accent);background:var(--accent-dim);border:1px solid rgba(200,240,96,0.25);border-radius:4px;padding:8px 16px;text-decoration:none;cursor:none;"
+                onmouseover="this.style.background='rgba(200,240,96,0.2)'" onmouseout="this.style.background='var(--accent-dim)'">
+                📄 Download Research Paper (PDF)
+              </a>
+            </div>
+          </div>
+          <span class="project-badge badge-cv">CV / AI</span>
+        </div>
+      </div>
+    </section>
+
     <!-- PROJECTS -->
     <section class="section" id="projects">
       <div class="section-header reveal">
-        <span class="section-num">01</span>
+        <span class="section-num">02</span>
         <h2 class="section-title">Projects</h2>
         <div class="section-line"></div>
       </div>
-
       <div class="projects-grid">
 
         <div class="project-item reveal">
           <div>
             <div class="project-num">001</div>
-            <div class="project-name">AI Tooth Segmentation &amp; Numbering</div>
-            <div class="project-location">
-              📍 Van Lang University — Ho Chi Minh City, Vietnam
-            </div>
-            <div class="collab-badge">⇄ International Co-op · Kasetsart University, Thailand</div>
-            <p class="project-desc">
-              Designed an instance segmentation pipeline for dental X-ray analysis.
-              Benchmarked one-stage, two-stage, and transformer-based models.
-              Proposed HTC (Swin Transformer + FPN) for improved boundary refinement.
-              Evaluated with mAP, AP50/75 metrics after CVAT annotation.
-            </p>
-            <div class="project-tags">
-              <span class="tag">Swin Transformer</span>
-              <span class="tag">FPN</span>
-              <span class="tag">HTC</span>
-              <span class="tag">CVAT</span>
-              <span class="tag">mAP</span>
-              <span class="tag">Instance Segmentation</span>
-            </div>
-          </div>
-          <span class="project-badge badge-cv">CV / AI</span>
-        </div>
-
-        <div class="project-item reveal reveal-delay-1">
-          <div>
-            <div class="project-num">002</div>
             <div class="project-name">Football Analysis System</div>
             <div class="project-location">
               📍 Kasetsart University, Sriracha Campus, Thailand
@@ -983,7 +1014,7 @@
     <!-- SKILLS -->
     <section class="section" id="skills">
       <div class="section-header reveal">
-        <span class="section-num">02</span>
+        <span class="section-num">03</span>
         <h2 class="section-title">Skills</h2>
         <div class="section-line"></div>
       </div>
@@ -1035,7 +1066,7 @@
     <!-- ABOUT -->
     <section class="section" id="about">
       <div class="section-header reveal">
-        <span class="section-num">03</span>
+        <span class="section-num">04</span>
         <h2 class="section-title">About</h2>
         <div class="section-line"></div>
       </div>
@@ -1081,7 +1112,7 @@
     <!-- ACTIVITY -->
     <section class="section" id="activity">
       <div class="section-header reveal">
-        <span class="section-num">04</span>
+        <span class="section-num">05</span>
         <h2 class="section-title">Activity</h2>
         <div class="section-line"></div>
       </div>
@@ -1104,7 +1135,7 @@
     <!-- CONTACT -->
     <section class="section" id="contact">
       <div class="section-header reveal">
-        <span class="section-num">05</span>
+        <span class="section-num">06</span>
         <h2 class="section-title">Contact</h2>
         <div class="section-line"></div>
       </div>
